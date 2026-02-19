@@ -99,11 +99,11 @@
             state: present
             name: "{{ vm_instance }}"
             namespace: "{{ target_ns }}"
-            # instancetype:
-            #   name: "{{ instance_type }}"
-            #   revisionName: null
-            # preference:
-            #   revisionName: null
+            instancetype:
+              name: "{{ instance_type }}"
+              revisionName: null
+            preference:
+              revisionName: null
 
     - name: VM start
       block:

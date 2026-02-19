@@ -15,15 +15,15 @@
 - name: Modify VM instance
   ansible.builtin.import_playbook: ./modify-vm-instance.yaml
   vars:
-    # target_ns: "{{ target_ns }}"
-    # vm_instance: "{{ vm_instance }}"
+    target_ns: "{{ target_ns }}"
+    vm_instance: "{{ vm_instance }}"
     instance_type: u1.small
 
 - name: Modify VM template
   ansible.builtin.import_playbook: ./modify-vm-template.yaml
   vars:
-    # target_ns: "{{ target_ns }}"
-    # vm_template: "{{ vm_template }}"
+    target_ns: "{{ target_ns }}"
+    vm_template: "{{ vm_template }}"
     vm_parameters:
       cpu:
         cores: 1

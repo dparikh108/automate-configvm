@@ -104,10 +104,10 @@
             state: present
             name: "{{ vm_template }}"
             namespace: "{{ target_ns }}"
-            # spec:
-            #   domain:
-            #     cpu: "{{ vm_parameters.cpu }}"
-            #     memory: "{{ vm_parameters.memory }}"
+            spec:
+              domain:
+                cpu: "{{ vm_parameters.cpu }}"
+                memory: "{{ vm_parameters.memory }}"
 
     - name: VM start
       block:
@@ -125,7 +125,7 @@
           redhat.openshift_virtualization.kubevirt_vm_info:
             name: "{{ vm_template }}"
             namespace: "{{ target_ns }}"
-            # running: true
+            running: true
             wait: true
 
     - name: VM info
